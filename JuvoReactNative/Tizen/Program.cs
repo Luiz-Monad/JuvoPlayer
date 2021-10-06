@@ -27,14 +27,7 @@ namespace JuvoReactNative
                 return "JuvoReactNative";
             }
         }
-        public override string JavaScriptMainModuleName
-        {
-            get
-            {
-                return "index.tizen";
-            }
-        }
-#if !DEBUG
+        
         public override string JavaScriptBundleFile
         {
             get
@@ -42,7 +35,7 @@ namespace JuvoReactNative
                 return Application.Current.DirectoryInfo.SharedResource + "index.tizen.bundle";
             }
         }
-#endif
+
         public override List<IReactPackage> Packages
         {
             get

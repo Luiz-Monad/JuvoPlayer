@@ -1,10 +1,11 @@
-<Project Sdk="Tizen.NET.Sdk/1.1.6">
+﻿<Project Sdk="Tizen.NET.Sdk/1.1.6">
   <!-- Property Group for .NET Core Project -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>tizen60;tizen50</TargetFrameworks>
+    <TargetFramework>tizen50</TargetFramework>
     <TizenTpkExcludePattern>runtimes\*\native\libSkiaSharp.so</TizenTpkExcludePattern>
     <LangVersion>7.3</LangVersion>
+    <StartupObject>JuvoReactNative.ReactNativeApp</StartupObject>
   </PropertyGroup>
   <Import Project="IntermediateManifest.targets" />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -33,14 +34,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\react-native-tizen-dotnet\Framework\ReactNet\ReactNativeTizen\ReactNativeTizen.csproj" />
     <ProjectReference Include="..\..\JuvoLogger.Tizen\JuvoLogger.Tizen.csproj" />
     <ProjectReference Include="..\..\JuvoLogger.Udp\JuvoLogger.Udp.csproj" />
     <ProjectReference Include="..\..\JuvoPlayer\JuvoPlayer.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ReactNativeTizen">
-      <HintPath>ReactNativeTizen.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="shared\res\assets\" />
