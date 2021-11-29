@@ -21,7 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="shared\res\index.tizen.bundle" />
-    <None Remove="shared\res\icon.png" />
     <None Remove="lib\libJSCore.so" />
     <None Remove="lib\libyoga.so" />
   </ItemGroup>
@@ -29,12 +28,9 @@
     <EmbeddedResource Include="shared\res\index.tizen.bundle">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="shared\res\icon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\react-native-tizen-dotnet\Framework\ReactNet\ReactNativeTizen\ReactNativeTizen.csproj" />
+    <ProjectReference Include="..\..\..\tizen-samples\react-native-tizen-dotnet\Framework\ReactNet\ReactNativeTizen\ReactNativeTizen.csproj" />
     <ProjectReference Include="..\..\JuvoLogger.Tizen\JuvoLogger.Tizen.csproj" />
     <ProjectReference Include="..\..\JuvoLogger.Udp\JuvoLogger.Udp.csproj" />
     <ProjectReference Include="..\..\JuvoPlayer\JuvoPlayer.csproj" />

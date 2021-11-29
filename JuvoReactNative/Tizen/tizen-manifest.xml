@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest package="org.test.juvoreactnative" version="1" api-version="5" xmlns="http://tizen.org/ns/packages">
-	<profile name="tv" />
-	<ui-application appid="org.test.juvoreactnative" exec="JuvoReactNative.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" splash-screen-display="true" launch_mode="single">
-		<label>JuvoReactNative</label>
-		<icon>favicon.png</icon>
-		<metadata key="http://samsung.com/tv/metadata/use.preview" value="endpoint_URL=https://raw.githubusercontent.com/SamsungDForum/JuvoPlayer/master/smarthubpreview/juvoplayerclipsJSON.json" />
-		<splash-screens>
-			<splash-screen dpi="hdpi" indicator-display="false" orientation="portrait" src="JuvoReactNativeTizenTV_black.jpg" type="img" />
-			<splash-screen app-control-operation="http://samsung.com/appcontrol/operation/eden_resume" dpi="hdpi" indicator-display="false" orientation="portrait" src="JuvoReactNativeTizenTV_black_eden.jpg" type="img" />
-		</splash-screens>
-	</ui-application>
-	<shortcut-list />
-	<privileges>
-		<privilege>http://tizen.org/privilege/network.get</privilege>
-		<privilege>http://tizen.org/privilege/network.set</privilege>
-		<privilege>http://tizen.org/privilege/network.profile</privilege>
-		<privilege>http://tizen.org/privilege/mediastorage</privilege>
-		<privilege>http://tizen.org/privilege/externalstorage</privilege>
-		<privilege>http://tizen.org/privilege/internet</privilege>
-	</privileges>
-	<dependencies />
-	<provides-appdefined-privileges />
-	<feature name="http://tizen.org/feature/screen.size.normal.1080.1920">true</feature>
+<manifest package="org.monadic.iptv.altino.4" version="4" api-version="5" xmlns="http://tizen.org/ns/packages">
+    <profile name="tv" />
+    <ui-application appid="org.monadic.iptv.altino.4" exec="JuvoReactNative.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" splash-screen-display="true" launch_mode="single">
+        <label>AltinoTV</label>
+        <icon>favicon.png</icon>
+        <metadata key="http://samsung.com/tv/metadata/use.preview" value="endpoint_URL=https://raw.githubusercontent.com/SamsungDForum/JuvoPlayer/master/smarthubpreview/juvoplayerclipsJSON.json" />
+        <splash-screens>
+            <splash-screen dpi="hdpi" indicator-display="false" orientation="portrait" src="JuvoReactNativeTizenTV_black.jpg" type="img" />
+            <splash-screen app-control-operation="http://samsung.com/appcontrol/operation/eden_resume" dpi="hdpi" indicator-display="false" orientation="portrait" src="JuvoReactNativeTizenTV_black_eden.jpg" type="img" />
+        </splash-screens>
+    </ui-application>
+    <shortcut-list />
+    <privileges>
+        <privilege>http://tizen.org/privilege/network.get</privilege>
+        <privilege>http://tizen.org/privilege/network.set</privilege>
+        <privilege>http://tizen.org/privilege/network.profile</privilege>
+        <privilege>http://tizen.org/privilege/mediastorage</privilege>
+        <privilege>http://tizen.org/privilege/externalstorage</privilege>
+        <privilege>http://tizen.org/privilege/internet</privilege>
+    </privileges>
+    <dependencies />
+    <provides-appdefined-privileges />
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920">true</feature>
 </manifest>
