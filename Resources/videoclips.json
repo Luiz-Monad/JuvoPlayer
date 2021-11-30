@@ -1,7 +1,7 @@
 ﻿[
   {
-    "title": "FHD Clean HLS",
-    "url": "http://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8",
+    "title": "Fry Coffee",
+    "url": "https://piptv-brso.streaming.media.azure.net/ca941a2e-dd0f-46e1-9ad0-43fc4e6a2a1b/100 Cups of Coffee.ism/manifest(format=m3u8-cmaf)",
     "type": "hls",
     "poster": "sintel.jpg",
     "description": "1024x576 Codecs: H264 - MPEG4 AVC. The Blender Foundation - Sintel. URI: http://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8.  Origin https://players.akamai.com/hls/",
