@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest package="org.monadic.iptv.altino.4" version="4" api-version="5" xmlns="http://tizen.org/ns/packages">
+<manifest package="org.monadic.iptv.altino.8" version="8" api-version="5" xmlns="http://tizen.org/ns/packages">
     <profile name="tv" />
-    <ui-application appid="org.monadic.iptv.altino.4" exec="JuvoReactNative.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" splash-screen-display="true" launch_mode="single">
+    <ui-application appid="org.monadic.iptv.altino.8" exec="JuvoReactNative.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" splash-screen-display="true" launch_mode="single">
         <label>AltinoTV</label>
         <icon>favicon.png</icon>
         <metadata key="http://samsung.com/tv/metadata/use.preview" value="endpoint_URL=https://raw.githubusercontent.com/SamsungDForum/JuvoPlayer/master/smarthubpreview/juvoplayerclipsJSON.json" />

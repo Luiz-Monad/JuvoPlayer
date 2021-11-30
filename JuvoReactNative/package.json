@@ -1,13 +1,19 @@
 {
-  "name": "JuvoReactNative",
-  "version": "1.5.5",
+  "name": "juvo-react-native",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "babel-jest": "^26.0.1",
-    "babel-preset-react-native": "^4.0.1",
-    "jest": "^26.0.1",
-    "react-native-tizen-scripts": "^0.1.11",
-    "react-test-renderer": "^15.4.2"
+    "@babel/core": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@types/jest": "^27.0.3",
+    "@types/react-native": "^0.66.6",
+    "babel-jest": "^27.4.2",
+    "babel-preset-react-native": "4.0.1",
+    "eslint": "^8.3.0",
+    "jest": "^27.4.2",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-native-tizen-scripts": "0.1.11",
+    "react-test-renderer": "17.0.2"
   },
   "main": "index.js",
   "scripts": {
@@ -19,32 +25,12 @@
   },
   "jest": {},
   "config": {
-    "tvip": "192.168.137.4",
+    "tvip": "192.168.100.1",
     "mode": "Release"
   },
   "dependencies": {
-    "react": "^15.4.2",
-    "react-native": "^0.42.3",
-    "react-native-tizen-dotnet": "^0.1.14"
-  },
-  "resolutions": {
-    "**/tizen-tv-dev-cli": "^0.1.9",
-    "**/node-forge": "^0.10.0",
-    "**/node-fetch": "^2.6.1",
-    "**/yargs-parser": "^20.2.2",
-    "**/@babel/core": "^7.12.3",
-    "**/node-uuid": "^1.4.8",
-    "**/core-js": "^2.6.11",
-    "**/bl": "^4.0.3",
-    "**/negotiator": "^0.6.2",
-    "**/fresh": "^0.5.2",
-    "**/debug": "^3.2.6",
-    "**/mime": "^1.6.0",
-    "**/xmlbuilder": "^11.0.0",
-    "**/base64-url": "^2.0.0",
-    "**/morgan": "^1.9.1",
-    "**/minimist": "^1.2.3",
-    "**/qs": "^6.3.2",
-    "**/hoek": "^5.0.3"
+    "react": "17.0.2",
+    "react-native": "0.66.3",
+    "react-native-tizen": "file:C:\\extern\\workbench\\iptv\\archives\\tizen-samples\\react-native-tizen-dotnet\\Devtools\\react-native-tizen-dotnet"
   }
 }
