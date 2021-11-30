@@ -1,7 +1,7 @@
 ﻿import { NativeModules } from 'react-native';
 
 const ResourceLoader = {
-    path: 'https://raw.githubusercontent.com/SamsungDForum/JuvoPlayer/master/Resources/',
+    path: 'https://raw.githubusercontent.com/Luiz-Monad/JuvoPlayer/master/Resources/videoclips.json',
     clipsData: [],
     errorMessage: '',
     load: () => fetch(ResourceLoader.path + 'videoclips.json').then((response) => response.json())
