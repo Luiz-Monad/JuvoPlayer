@@ -2,7 +2,7 @@
   <!-- Property Group for Tizen Project -->
   <PropertyGroup>
     <TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
-    <TargetFrameworks>tizen60;tizen50</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;tizen50</TargetFrameworks>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -13,6 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
+    <PackageReference Include="Tizen.NET.TV" Version="5.5.0.4997532" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
