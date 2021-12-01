@@ -103,9 +103,11 @@ namespace JuvoReactNative
 
             try
             {
+#if DEBUG
                 UdpLoggerManager.Configure();
                 if (!UdpLoggerManager.IsRunning)
                     TizenLoggerManager.Configure();
+#endif
 
                 ReactNativeApp app = new ReactNativeApp();
                 app.Run(args);

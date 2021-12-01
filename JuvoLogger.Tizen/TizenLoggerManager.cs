@@ -54,5 +54,6 @@ namespace JuvoLogger.Tizen
             }
             Configure(contents);
         }
+
     }
 }

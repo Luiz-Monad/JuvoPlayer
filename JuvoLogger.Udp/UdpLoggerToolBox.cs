@@ -43,18 +43,10 @@ namespace JuvoLogger.Udp
             ((IPEndPoint)destinationEp).Address = ((IPEndPoint)sourceEp).Address;
             ((IPEndPoint)destinationEp).Port = ((IPEndPoint)sourceEp).Port;
         }
+
         public static int GetLowestCommonMtu()
         {
-            var lowestMtu = int.MaxValue;
-            var nics = NetworkInterface.GetAllNetworkInterfaces();
-
-            foreach (var nic in nics)
-            {
-                var nicMtu = Math.Min(nic.GetIPProperties().GetIPv4Properties().Mtu, nic.GetIPProperties().GetIPv6Properties().Mtu);
-                lowestMtu = Math.Min(nicMtu, lowestMtu);
-            }
-
-            return lowestMtu;
+            return 1460;
         }
 
         public static void Dispose<T>(this T obj) => ((IDisposable)obj).Dispose();

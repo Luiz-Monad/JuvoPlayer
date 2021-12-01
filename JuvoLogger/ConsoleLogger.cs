@@ -16,6 +16,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace JuvoLogger
@@ -29,7 +30,7 @@ namespace JuvoLogger
         public override void PrintLog(LogLevel level, string message, string file, string method, int line)
         {
             var uri = new Uri("file://" + file);
-            Console.WriteLine($"[{level}] {Path.GetFileName(uri.AbsolutePath)}: {method}:{line} > {message}");
+            Trace.WriteLine($"[{level}] {Path.GetFileName(uri.AbsolutePath)}: {method}:{line} > {message}");
         }
     }
 }
