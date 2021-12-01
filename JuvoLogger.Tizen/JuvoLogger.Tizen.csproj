@@ -13,7 +13,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-    <PackageReference Include="Tizen.NET.TV" Version="5.5.0.4997532" />
+    <PackageReference Include="Tizen.NET.TV" Version="5.5.0.4997532">
+      <ExcludeAssets>Runtime</ExcludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
