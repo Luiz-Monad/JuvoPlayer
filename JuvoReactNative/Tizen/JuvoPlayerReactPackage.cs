@@ -10,7 +10,7 @@ namespace JuvoReactNative
 {
     public class JuvoPlayerReactPackage : IReactPackage
     {
-        private ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoRN");
+        private ILogger Logger = new Logger("JuvoRN");
         public readonly string Tag = "JuvoRN";
         private readonly IDeepLinkSender deepLinkSender;
 

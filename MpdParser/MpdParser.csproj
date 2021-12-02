@@ -1,17 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<!-- Property Group for Tizen Project -->
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>7.3</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>portable</DebugType>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>None</DebugType>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Polly" Version="7.0.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Polly" Version="7.0.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Configuration\Configuration.csproj" />
-    <ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Configuration\Configuration.csproj" />
+		<ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
+	</ItemGroup>
 
 </Project>

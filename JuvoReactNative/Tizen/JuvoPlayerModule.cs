@@ -19,7 +19,7 @@ namespace JuvoReactNative
     {
         private Timer playbackTimer;
         private SeekLogic seekLogic = null; // needs to be initialized in the constructor!
-        private ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoRN");
+        private ILogger Logger = new Logger("JuvoRN");
         public readonly string Tag = "JuvoRN";
         EcoreEvent<EcoreKeyEventArgs> _keyDown;
         EcoreEvent<EcoreKeyEventArgs> _keyUp;

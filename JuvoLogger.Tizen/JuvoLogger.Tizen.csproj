@@ -1,23 +1,24 @@
 ﻿<Project Sdk="Tizen.NET.Sdk/1.1.6">
-  <!-- Property Group for Tizen Project -->
-  <PropertyGroup>
-    <TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
-    <TargetFrameworks>netstandard2.0;tizen50</TargetFrameworks>
-    <LangVersion>7.3</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>None</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-    <PackageReference Include="Tizen.NET.TV" Version="5.5.0.4997532">
-      <ExcludeAssets>Runtime</ExcludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
-  </ItemGroup>
+	<!-- Property Group for Tizen Project -->
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;tizen50</TargetFrameworks>
+		<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>portable</DebugType>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>None</DebugType>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
+		<PackageReference Include="Tizen.NET.TV" Version="5.5.0.4997532">
+			<ExcludeAssets>Runtime</ExcludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\JuvoLogger\JuvoLogger.csproj" />
+	</ItemGroup>
 </Project>

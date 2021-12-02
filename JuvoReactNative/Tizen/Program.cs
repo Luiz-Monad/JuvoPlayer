@@ -9,9 +9,8 @@ using ReactNative.Shell;
 using ReactNative.Modules.Core;
 using JuvoLogger.Tizen;
 using JuvoPlayer.Common;
-using Log = Tizen.Log;
+using ReactNative.Common;
 using Tizen.Applications;
-using JuvoLogger.Udp;
 
 namespace JuvoReactNative
 {
@@ -40,7 +39,7 @@ namespace JuvoReactNative
         {
             get
             {
-                Log.Error(Tag, "Packages loading...");
+                Log.Info(Tag, "Packages loading...");
                 return new List<IReactPackage>
                 {
                     new MainReactPackage(),
@@ -100,15 +99,10 @@ namespace JuvoReactNative
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.UnhandledException += UnhandledException;
+            Log.Info(Tag, "Main...");
 
             try
             {
-#if DEBUG
-                UdpLoggerManager.Configure();
-                if (!UdpLoggerManager.IsRunning)
-                    TizenLoggerManager.Configure();
-#endif
-
                 ReactNativeApp app = new ReactNativeApp();
                 app.Run(args);
             }
@@ -118,8 +112,7 @@ namespace JuvoReactNative
             }
             finally
             {
-                if (UdpLoggerManager.IsRunning)
-                    UdpLoggerManager.Terminate();
+                NLog.LogManager.Shutdown();
             }
         }
     }

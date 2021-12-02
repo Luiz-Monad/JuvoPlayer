@@ -1,42 +1,37 @@
 ﻿<Project Sdk="Tizen.NET.Sdk/1.1.6">
-  <!-- Property Group for .NET Core Project -->
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>tizen50</TargetFramework>
-    <TizenTpkExcludePattern>runtimes\*\native\libSkiaSharp.so</TizenTpkExcludePattern>
-    <LangVersion>7.3</LangVersion>
-    <StartupObject>JuvoReactNative.ReactNativeApp</StartupObject>
-    <Version>2.0.0</Version>
-  </PropertyGroup>
-  <Import Project="IntermediateManifest.targets" />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>None</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="lib\**" />
-    <EmbeddedResource Remove="lib\**" />
-    <None Remove="lib\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="shared\res\index.tizen.bundle" />
-    <None Remove="lib\libJSCore.so" />
-    <None Remove="lib\libyoga.so" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="shared\res\index.tizen.bundle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\tizen-samples\react-native-tizen-dotnet\Framework\ReactNet\ReactNativeTizen\ReactNativeTizen.csproj" />
-    <ProjectReference Include="..\..\JuvoLogger.Tizen\JuvoLogger.Tizen.csproj" />
-    <ProjectReference Include="..\..\JuvoLogger.Udp\JuvoLogger.Udp.csproj" />
-    <ProjectReference Include="..\..\JuvoPlayer\JuvoPlayer.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="shared\res\assets\" />
-  </ItemGroup>
+
+	<!-- Property Group for .NET Core Project -->
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>tizen60;tizen50</TargetFrameworks>
+		<TizenTpkExcludePattern>runtimes\*\native\libSkiaSharp.so</TizenTpkExcludePattern>
+		<StartupObject>JuvoReactNative.ReactNativeApp</StartupObject>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>portable</DebugType>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>None</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="lib\**" />
+		<EmbeddedResource Remove="lib\**" />
+		<None Remove="lib\**" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\tizen-samples\react-native-tizen-dotnet\Framework\ReactNet\ReactNativeTizen\ReactNativeTizen.csproj" />
+		<ProjectReference Include="..\..\JuvoLogger.Tizen\JuvoLogger.Tizen.csproj" />
+		<ProjectReference Include="..\..\JuvoPlayer\JuvoPlayer.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="shared\res\assets\" />
+	</ItemGroup>
+
 </Project>
