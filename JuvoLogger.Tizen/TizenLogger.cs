@@ -16,53 +16,44 @@
  */
 
 using System.Collections.Generic;
+using NLog;
+using NLog.Targets;
 
 namespace JuvoLogger.Tizen
 {
-    public class TizenLogger : LoggerBase
+    using LogLevel = NLog.LogLevel;
+
+    [Target("TizenLogger")]
+    public sealed class TizenLogger : TargetWithLayout
     {
         private const int MaxLen = 800;
 
-        private delegate void LogMethod(string tag, string message, string file, string func, int line);
-
-        public TizenLogger(string channel, LogLevel level) : base(channel, level)
+        public TizenLogger()
         {
         }
 
-        public override void PrintLog(LogLevel level, string message, string file, string method, int line)
+        protected override void Write(LogEventInfo logEvent)
         {
-            LogMethod tizenLog;
-            switch (level)
-            {
-                case LogLevel.Verbose:
-                    tizenLog = global::Tizen.Log.Verbose;
-                    break;
-                case LogLevel.Debug:
-                    tizenLog = global::Tizen.Log.Debug;
-                    break;
-                case LogLevel.Info:
-                    tizenLog = global::Tizen.Log.Info;
-                    break;
-                case LogLevel.Warn:
-                    tizenLog = global::Tizen.Log.Warn;
-                    break;
-                case LogLevel.Error:
-                    tizenLog = global::Tizen.Log.Error;
-                    break;
-                case LogLevel.Fatal:
-                    tizenLog = global::Tizen.Log.Fatal;
-                    break;
-                default:
-                    tizenLog = global::Tizen.Log.Error;
-                    break;
-            }
-
-            if (message.Length <= MaxLen)
-                tizenLog(Channel, message, file, method, line);
+            var logMessage = RenderLogEvent(this.Layout, logEvent);
+            System.Action<string, string, string, string, int> tizenLog;
+            var lvl = logEvent.Level;
+            if (lvl == LogLevel.Trace) tizenLog = global::Tizen.Log.Verbose;
+            else if (lvl == LogLevel.Debug) tizenLog = global::Tizen.Log.Debug;
+            else if (lvl == LogLevel.Info) tizenLog = global::Tizen.Log.Info;
+            else if (lvl == LogLevel.Warn) tizenLog = global::Tizen.Log.Warn;
+            else if (lvl == LogLevel.Error) tizenLog = global::Tizen.Log.Error;
+            else if (lvl == LogLevel.Fatal) tizenLog = global::Tizen.Log.Fatal;
+            else tizenLog = global::Tizen.Log.Error;
+            var channel = logEvent.LoggerName;
+            var file = logEvent.CallerFilePath;
+            var method = logEvent.CallerMemberName;
+            var line = logEvent.CallerLineNumber;
+            if (logMessage.Length <= MaxLen)
+                tizenLog(channel, logMessage, file, method, line);
             else
             {
-                foreach (var messagePart in SplitMessage(message))
-                    tizenLog(Channel, messagePart, file, method, line);
+                foreach (var messagePart in SplitMessage(logMessage))
+                    tizenLog(channel, messagePart, file, method, line);
             }
         }
 
@@ -76,7 +67,7 @@ namespace JuvoLogger.Tizen
             // Note: dlog's max log size is about 950 characters.
 
             if (message.Length <= MaxLen)
-                return new[] {message};
+                return new[] { message };
             var result = new List<string>();
             foreach (var line in message.Split('\n'))
             {

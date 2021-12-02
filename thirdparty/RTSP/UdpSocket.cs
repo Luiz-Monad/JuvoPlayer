@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Rtsp
 {
@@ -191,7 +192,7 @@ namespace Rtsp
 
                     // We have an RTP frame.
                     // Fire the DataReceived event with 'frame'
-                    Console.WriteLine("Received RTP data on port " + data_port);
+                    Trace.WriteLine("Received RTP data on port " + data_port);
 
                     Rtsp.Messages.RtspChunk currentMessage = new Rtsp.Messages.RtspData();
                     // aMessage.SourcePort = ??

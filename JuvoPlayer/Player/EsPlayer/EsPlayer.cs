@@ -26,7 +26,7 @@ namespace JuvoPlayer.Player.EsPlayer
 {
     public class EsPlayer : IPlayer
     {
-        private static readonly ILogger logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger logger = new Logger("JuvoPlayer");
 
         private readonly EsPlayerPacketStorage packetStorage;
         private readonly EsStreamController streamControl;

@@ -66,7 +66,7 @@ namespace JuvoPlayer.Player.EsPlayer
             }
         }
 
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
         private readonly SynchronizationData[] _streamSyncData = new SynchronizationData[(int)StreamType.Count];
         private readonly AsyncBarrier<bool> _streamSyncBarrier = new AsyncBarrier<bool>();
         private readonly PlayerClockProvider _playerClockSource;

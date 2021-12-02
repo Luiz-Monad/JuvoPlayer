@@ -39,7 +39,7 @@ namespace JuvoPlayer.DataProviders.Dash
     internal class DashManifestProvider : IDisposable
     {
         private const string Tag = "JuvoPlayer";
-        private readonly ILogger logger = LoggerManager.GetInstance().GetLogger(Tag);
+        private readonly ILogger logger = new Logger(Tag);
 
         private readonly Subject<string> streamErrorSubject = new Subject<string>();
         private readonly Subject<TimeSpan> clipDurationSubject = new Subject<TimeSpan>();

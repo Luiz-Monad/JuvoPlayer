@@ -12,7 +12,7 @@ namespace Rtsp.Messages
     public class RtspData : RtspChunk
     {
         //private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
-        private static readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger _logger = new Logger("JuvoPlayer");
 
 
         /// <summary>

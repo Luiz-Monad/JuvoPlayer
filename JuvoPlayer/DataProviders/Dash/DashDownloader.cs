@@ -32,7 +32,7 @@ namespace JuvoPlayer.DataProviders.Dash
     internal class ByteRange
     {
         private static readonly string Tag = "JuvoPlayer";
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger(Tag);
+        private static readonly ILogger Logger = new Logger(Tag);
         public long Low { get; }
         public long High { get; }
 
@@ -143,7 +143,7 @@ namespace JuvoPlayer.DataProviders.Dash
     {
         private const string Tag = "JuvoPlayer";
 
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger(Tag);
+        private readonly ILogger Logger = new Logger(Tag);
 
         private CancellationToken cancellationToken;
 

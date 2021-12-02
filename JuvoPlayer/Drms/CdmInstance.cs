@@ -40,7 +40,7 @@ namespace JuvoPlayer.Drms
 {
     public class CdmInstance : IEventListener, ICdmInstance
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         public string KeySystem { get; }
         public EmeUtils.DrmType DrmType { get; }

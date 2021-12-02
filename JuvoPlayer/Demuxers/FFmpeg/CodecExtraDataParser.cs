@@ -27,7 +27,7 @@ namespace JuvoPlayer.Demuxers.FFmpeg
 {
     internal class CodecExtraDataParser
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         internal static unsafe byte[] Parse(AVCodecID codecId, byte* extradata, int size)
         {

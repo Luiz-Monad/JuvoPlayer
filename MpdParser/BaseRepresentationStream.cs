@@ -64,7 +64,7 @@ namespace MpdParser.Node.Dynamic
             AvailabilityTimeComplete = availabilityTimeComplete;
         }
 
-        protected static ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        protected static ILogger Logger = new Logger("JuvoPlayer");
 
         private ManifestParameters parameters;
 

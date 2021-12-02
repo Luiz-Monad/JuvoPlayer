@@ -55,7 +55,7 @@ namespace JuvoPlayer.Player.EsPlayer
 
         private StateSnapshot _suspendState;
 
-        private static readonly ILogger logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger logger = new Logger("JuvoPlayer");
 
         // Reference to all data streams representing transfer of individual
         // stream data and data storage

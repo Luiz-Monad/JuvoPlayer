@@ -1,17 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!-- Property Group for Tizen Project -->
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
-    <LangVersion>7.3</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>None</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
-  </ItemGroup>
+	<!-- Property Group for Tizen Project -->
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>portable</DebugType>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>None</DebugType>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
+		<PackageReference Include="Microsoft.ApplicationInsights.NLogTarget" Version="2.19.0" />
+		<PackageReference Include="NLog" Version="4.7.12" />
+	</ItemGroup>
 </Project>

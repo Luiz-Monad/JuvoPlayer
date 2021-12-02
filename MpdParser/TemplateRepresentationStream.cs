@@ -186,7 +186,7 @@ namespace MpdParser.Node.Dynamic
 
         private uint? templateDuration;
 
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger(MpdParser.LogTag);
+        private static readonly ILogger Logger = new Logger(MpdParser.LogTag);
 
         public TemplateRepresentationStream(Uri baseUrl, Template init, Template media, uint? bandwidth,
             string reprId, uint timescale, TimelineItem[] timeline,

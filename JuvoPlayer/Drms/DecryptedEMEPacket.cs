@@ -25,7 +25,7 @@ namespace JuvoPlayer.Drms
 {
     internal sealed class DecryptedEMEPacket : Packet
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
         private readonly AsyncContextThread releaseThread;
         public HandleSize HandleSize { get; set; }
         public DecryptedEMEPacket(AsyncContextThread releaseThread)

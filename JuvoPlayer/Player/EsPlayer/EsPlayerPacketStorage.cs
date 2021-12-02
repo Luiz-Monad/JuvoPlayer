@@ -45,7 +45,7 @@ namespace JuvoPlayer.Player.EsPlayer
             }
         }
 
-        private readonly ILogger logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger logger = new Logger("JuvoPlayer");
 
         /// <summary>
         /// Data storage collection

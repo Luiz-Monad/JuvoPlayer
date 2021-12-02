@@ -55,7 +55,7 @@ namespace JuvoPlayer.Player.EsPlayer
     /// </summary>
     internal class EsStream : IDisposable
     {
-        private readonly ILogger logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger logger = new Logger("JuvoPlayer");
 
         /// Delegate holding PushConfigMethod. Different for Audio and Video
         private delegate void StreamConfigure(StreamConfig streamConfig);

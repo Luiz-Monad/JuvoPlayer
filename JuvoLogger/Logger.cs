@@ -16,93 +16,77 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace JuvoLogger
 {
-    public abstract class LoggerBase : ILogger
+    public class Logger : ILogger
     {
-        public string Channel { get; }
+        private const string Tag = "JuvoPlayer";
+        private readonly TraceSource logger;
 
-        private LogLevel level;
-
-        protected LogLevel Level
+        public Logger(string channel)
         {
-            get => level;
-            set => level = Enum.IsDefined(typeof(LogLevel), value) ? value : throw new ArgumentOutOfRangeException();
+            logger = new TraceSource($"{Tag}.{channel}");
         }
 
-        protected LoggerBase(string channel, LogLevel level)
-        {
-            Channel = channel ?? throw new ArgumentNullException();
-            this.Level = level;
-        }
+        private const string format = "{1}: {2}:{3} > {0}";
 
         public void Verbose(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Verbose, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Verbose, 0, format, message, file, method, line);
         }
 
         public void Debug(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Debug, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Verbose, 1, format, message, file, method, line);
         }
 
         public void Info(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Info, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Information, 0, format, message, file, method, line);
         }
 
         public void Warn(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Warn, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Warning, 0, format, message, file, method, line);
         }
 
         public void Warn(Exception ex, string message, string file = "", string method = "", int line = 0)
         {
             if (!string.IsNullOrEmpty(message))
-                PrintLogIfEnabled(LogLevel.Warn, message, file, method, line);
-            PrintLogIfEnabled(LogLevel.Warn, ex.Message, file, method, line);
+                logger.TraceEvent(TraceEventType.Warning, 0, format, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Warning, 0, format, ex.Message, file, method, line);
         }
 
         public void Error(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Error, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Error, 0, format, message, file, method, line);
         }
 
         public void Error(Exception ex, string message, string file = "", string method = "", int line = 0)
         {
             if (!string.IsNullOrEmpty(message))
-                PrintLogIfEnabled(LogLevel.Error, message, file, method, line);
-            PrintLogIfEnabled(LogLevel.Error, ex.Message, file, method, line);
-            PrintLogIfEnabled(LogLevel.Error, ex.Source, file, method, line);
-            PrintLogIfEnabled(LogLevel.Error, ex.StackTrace, file, method, line);
+                logger.TraceEvent(TraceEventType.Error, 0, format, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Error, 0, format, ex.Message, file, method, line);
+            logger.TraceEvent(TraceEventType.Error, 0, format, ex.Source, file, method, line);
+            logger.TraceEvent(TraceEventType.Error, 0, format, ex.StackTrace, file, method, line);
         }
 
         public void Fatal(string message, string file = "", string method = "", int line = 0)
         {
-            PrintLogIfEnabled(LogLevel.Fatal, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Critical, 0, format, message, file, method, line);
         }
 
         public void Fatal(Exception ex, string message, string file = "", string method = "", int line = 0)
         {
             if (!string.IsNullOrEmpty(message))
-                PrintLogIfEnabled(LogLevel.Fatal, message, file, method, line);
-            PrintLogIfEnabled(LogLevel.Fatal, ex.Message, file, method, line);
-            PrintLogIfEnabled(LogLevel.Fatal, ex.Source, file, method, line);
-            PrintLogIfEnabled(LogLevel.Fatal, ex.StackTrace, file, method, line);
+                logger.TraceEvent(TraceEventType.Critical, 0, format, message, file, method, line);
+            logger.TraceEvent(TraceEventType.Critical, 0, format, ex.Message, file, method, line);
+            logger.TraceEvent(TraceEventType.Critical, 0, format, ex.Source, file, method, line);
+            logger.TraceEvent(TraceEventType.Critical, 0, format, ex.StackTrace, file, method, line);
         }
 
-        private void PrintLogIfEnabled(LogLevel level, string message, string file, string method, int line)
-        {
-            if (!IsLevelEnabled(level)) return;
-            PrintLog(level, message, file, method, line);
-        }
-
-        public abstract void PrintLog(LogLevel level, string message, string file, string method, int line);
-
-        public bool IsLevelEnabled(LogLevel level)
-        {
-            return level <= this.Level;
-        }
     }
 }

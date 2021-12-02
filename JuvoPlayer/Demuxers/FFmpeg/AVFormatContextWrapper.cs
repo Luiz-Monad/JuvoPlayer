@@ -30,7 +30,7 @@ namespace JuvoPlayer.Demuxers.FFmpeg
 {
     public unsafe class AVFormatContextWrapper : IAVFormatContext
     {
-        private static ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static ILogger Logger = new Logger("JuvoPlayer");
 
         private AVFormatContext* formatContext;
         private AVIOContextWrapper avioContext;

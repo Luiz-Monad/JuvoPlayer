@@ -20,7 +20,7 @@ namespace Rtsp
     /// </summary>
     public class RtspListener : IDisposable
     {
-        private static readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger _logger = new Logger("JuvoPlayer");
 
         private IRtspTransport _transport;
 

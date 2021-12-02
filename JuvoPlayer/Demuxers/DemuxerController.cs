@@ -40,7 +40,7 @@ namespace JuvoPlayer.Demuxers
         private IObservable<byte[]> dataSource;
         private IDisposable dataSourceSub;
         private bool isDisposed;
-        private ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private ILogger Logger = new Logger("JuvoPlayer");
         private bool paused;
 
         public DemuxerController(IDemuxer demuxer)

@@ -29,7 +29,7 @@ namespace JuvoPlayer.Player.EsPlayer
 
     internal class PlayerClockProvider : IDisposable
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private PlayerClockFn _playerClock = InvalidClockFn;
         private TimeSpan _currentClock = TimeSpan.Zero;

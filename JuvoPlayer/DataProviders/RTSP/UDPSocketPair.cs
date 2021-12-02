@@ -26,7 +26,7 @@ namespace JuvoPlayer.DataProviders.RTSP
 {
     internal class UDPSocketPair
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private readonly UdpClient dataSocket = null;
         private readonly UdpClient controlSocket = null;

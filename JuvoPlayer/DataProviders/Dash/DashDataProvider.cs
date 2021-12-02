@@ -29,7 +29,7 @@ namespace JuvoPlayer.DataProviders.Dash
     internal class DashDataProvider : IDataProvider
     {
         private const string Tag = "JuvoPlayer";
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger(Tag);
+        private readonly ILogger Logger = new Logger(Tag);
 
         private DashMediaPipeline audioPipeline;
         private DashMediaPipeline videoPipeline;

@@ -9,7 +9,7 @@ namespace Rtsp
     // WWW-Authentication and Authorization Headers
     public class Authentication
     {
-        private static readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger _logger = new Logger("JuvoPlayer");
 
         public enum Type {Basic, Digest};
 

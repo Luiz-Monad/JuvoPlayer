@@ -25,7 +25,7 @@ namespace MpdParser.Node.Atom
     public abstract class AtomBase
     {
         protected UInt32 AtomSize;
-        protected static ILogger Logger = LoggerManager.GetInstance().GetLogger(MpdParser.LogTag);
+        protected static ILogger Logger = new Logger(MpdParser.LogTag);
 
         public abstract void ParseAtom(byte[] adata, ulong dataStart);
 

@@ -24,7 +24,7 @@ namespace JuvoPlayer.Demuxers.FFmpeg
 {
     public class FFmpegGlue : IFFmpegGlue
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         public void Initialize()
         {

@@ -37,7 +37,7 @@ namespace JuvoPlayer.Player
 
         private readonly Subject<string> streamErrorSubject = new Subject<string>();
 
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         public PlayerController(IPlayer player, IDrmManager drmManager)
         {

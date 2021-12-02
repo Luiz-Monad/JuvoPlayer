@@ -26,7 +26,7 @@ namespace MpdParser.Network
 {
     public class ByteRange
     {
-        protected static ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        protected static ILogger Logger = new Logger("JuvoPlayer");
 
         public long Low { get; }
         public long High { get; }

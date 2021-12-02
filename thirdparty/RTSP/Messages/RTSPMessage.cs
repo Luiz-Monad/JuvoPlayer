@@ -12,7 +12,7 @@ namespace Rtsp.Messages
 
     public class RtspMessage : RtspChunk
     {
-        private static readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger _logger = new Logger("JuvoPlayer");
 
         /// <summary>
         /// The regex to validate the Rtsp message.

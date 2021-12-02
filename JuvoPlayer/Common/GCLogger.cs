@@ -27,7 +27,7 @@ namespace JuvoPlayer.Common
     /// </summary>
     public class GCLogger : IDisposable
     {
-        private ILogger Logger = LoggerManager.GetInstance().GetLogger("GC");
+        private ILogger Logger = new Logger("GC");
         private Task task;
         private CancellationTokenSource tokenSource;
 

@@ -28,7 +28,7 @@ namespace JuvoPlayer.Drms
 {
     internal static class DrmInitDataTools
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         // Master KeyID is used as internal identifier of session which apply to entire
         // content but don't have any key ids defined.

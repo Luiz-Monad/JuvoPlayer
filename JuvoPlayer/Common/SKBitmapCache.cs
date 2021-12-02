@@ -36,7 +36,7 @@ namespace JuvoPlayer.Common
         private readonly ConcurrentDictionary<string, SemaphoreSlim> _bitmapLoaderLocks =
             new ConcurrentDictionary<string, SemaphoreSlim>();
 
-        private readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger _logger = new Logger("JuvoPlayer");
 
         public async Task<SKBitmapRefCounted> GetBitmap(string path)
         {

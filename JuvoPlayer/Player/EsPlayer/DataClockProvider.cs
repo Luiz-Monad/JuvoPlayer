@@ -26,7 +26,7 @@ namespace JuvoPlayer.Player.EsPlayer
 {
     internal class DataClockProvider : IDisposable
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
         private TimeSpan _bufferLimit = DataClockProviderConfig.TimeBufferDepthDefault;
         private TimeSpan _clock;
         private TimeSpan _synchronizerClock;

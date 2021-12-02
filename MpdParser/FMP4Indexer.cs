@@ -40,7 +40,7 @@ namespace MpdParser.Node.Dynamic
 
     internal class FMp4Indexer
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         public static async Task<IList<Segment>> Download(Segment indexSource, Uri mediaUrl, CancellationToken token)
         {

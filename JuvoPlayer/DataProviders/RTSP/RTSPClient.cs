@@ -35,7 +35,7 @@ namespace JuvoPlayer.DataProviders.RTSP
 {
     internal class RTSPClient : IRTSPClient
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private enum State { Idle, Starting, Playing, Paused, Terminating };
         private State _currentState = State.Idle;

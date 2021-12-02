@@ -28,7 +28,7 @@ namespace JuvoPlayer.Drms
 {
     public class DrmManager : IDrmManager, IDisposable
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private readonly List<DrmDescription> clipDrmConfigurations = new List<DrmDescription>();
         private readonly ConcurrentDictionary<string, CdmInstance> cdmInstances = new ConcurrentDictionary<string, CdmInstance>();

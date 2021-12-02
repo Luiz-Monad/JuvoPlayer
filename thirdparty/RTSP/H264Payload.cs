@@ -11,7 +11,7 @@ namespace Rtsp
 
     public class H264Payload
     {
-        private static readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger _logger = new Logger("JuvoPlayer");
 
         int norm, fu_a, fu_b, stap_a, stap_b, mtap16, mtap24 = 0; // used for diagnostics stats
 

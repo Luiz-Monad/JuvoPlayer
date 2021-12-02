@@ -27,7 +27,7 @@ namespace JuvoPlayer.Drms
 {
     internal sealed class MediaKeySession : IDrmSession
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private readonly DrmInitData initData;
         private string sessionId;

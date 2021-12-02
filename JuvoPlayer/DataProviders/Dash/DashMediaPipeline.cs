@@ -67,7 +67,7 @@ namespace JuvoPlayer.DataProviders.Dash
             }
         }
 
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private readonly IDashClient dashClient;
         private readonly IDemuxerController demuxerController;

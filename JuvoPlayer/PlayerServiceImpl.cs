@@ -38,7 +38,7 @@ namespace JuvoPlayer
 {
     public class PlayerServiceImpl : IPlayerService
     {
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
 
         private IDataProvider dataProvider;
         private IPlayerController playerController;

@@ -35,7 +35,7 @@ namespace JuvoPlayer.ResourceLoaders
             Timeout = TimeSpan.FromSeconds(10)
         };
 
-        private readonly ILogger _logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger _logger = new Logger("JuvoPlayer");
 
         private readonly Uri _path;
         private Task<HttpResponseMessage> _responseTask;

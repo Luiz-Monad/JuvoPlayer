@@ -30,7 +30,7 @@ namespace JuvoPlayer.Demuxers.FFmpeg
 {
     public class FFmpegDemuxer : IDemuxer
     {
-        private static readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private static readonly ILogger Logger = new Logger("JuvoPlayer");
         private readonly IFFmpegGlue ffmpegGlue;
         private AsyncContextThread thread;
         private IAVFormatContext formatContext;

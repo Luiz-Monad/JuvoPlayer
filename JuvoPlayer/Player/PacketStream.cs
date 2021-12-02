@@ -33,7 +33,7 @@ namespace JuvoPlayer.Player
 
         private StreamConfig config;
         private readonly StreamType streamType;
-        private readonly ILogger Logger = LoggerManager.GetInstance().GetLogger("JuvoPlayer");
+        private readonly ILogger Logger = new Logger("JuvoPlayer");
         private bool forceDrmChange;
         private static readonly AsyncLock packetStreamLock = new AsyncLock();
 
